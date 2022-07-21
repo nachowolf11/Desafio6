@@ -34,7 +34,7 @@ app.get('/data2',(req,res)=>{
     res.json({data})
 })
 
-server.listen(8080,()=>{
+server.listen(PORT,()=>{
     console.log('SERVER ON');
 })
 
