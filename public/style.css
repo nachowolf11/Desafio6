@@ -1,0 +1,24 @@
+#mensajes{
+    min-height: 100px;
+    width: 95%;
+    background-color: rgb(242, 242, 242);
+    margin-left: 12px;
+}
+
+#enviarMsj{
+    border: 0;
+}
+
+.mail{
+    color: blue;
+    font-weight: bold;
+}
+
+.fecha{
+    color: brown;
+}
+
+.msn{
+    font-style: italic;
+    color: green;
+}
