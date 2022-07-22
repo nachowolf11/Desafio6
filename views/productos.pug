@@ -15,19 +15,14 @@ html
         div(class="bg-secondary mt-3 pb-3" style="--bs-bg-opacity: .2; width:95%")
             div(class="row g-0")
                 div(class="d-flex justify-content-center fw-bold text-primary fs-3 mt-5") Lista de Productos
-            div(class="row m-5 bg-dark text-light" id="items")
+            div(class="row m-5 bg-dark text-light d-none" id="items")
                 div(class="row g-0")
                     div(class="col-4 border d-flex fw-bold justify-content-center") Nombre
                     div(class="col-4 border d-flex fw-bold justify-content-center") Precio
                     div(class="col-4 border d-flex fw-bold justify-content-center") Foto
-                //- each prod in productos 
-                //-     div(class="row g-0")
-                //-         div(class="col-4 border-bottom border-end bg-secondary border-start d-flex justify-content-center") #{prod.producto.title}
-                //-         div(class="col-4 border-bottom border-end bg-secondary d-flex justify-content-center") #{prod.producto.price}
-                //-         div(class="col-4 border-bottom border-end bg-secondary d-flex justify-content-center") #{prod.producto.thumbnail}
-            //- div(class="d-flex justify-content-center fw-bold text-dark fs-3 pb-5") No hay productos
+            div(class="d-flex justify-content-center fw-bold text-dark fs-3 pb-5" id="emptyList") No hay productos
         div(class="row")
-            div(class="fw-bold text-primary fs-3 mt-5 mb-3" id="emptyList") Chat de Mensajes
+            div(class="fw-bold text-primary fs-3 mt-5 mb-3") Chat de Mensajes
             div(class="mb-2")
                 input(type="mail" name="mail" id="mail" placeholder="Email")
             div(id="mensajes" class="mb-2")

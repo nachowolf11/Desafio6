@@ -58,6 +58,8 @@ function renderItem(item) {
         <div class="col-4 border-bottom border-end bg-secondary d-flex justify-content-center"><img src="${item.thumbnail}"></div>
     </div>
     `
+    document.getElementById('emptyList').classList.add('d-none')
+    document.getElementById('items').classList.remove('d-none')
 }
 
 function cargarProductos() {
@@ -67,7 +69,12 @@ function cargarProductos() {
 }
 
 function loadItemsToDiv(data) {
-    data.forEach(item => {
-        renderItem(item)
-    })
+    if(data.length > 0){
+        data.forEach(item => {
+            renderItem(item)
+        })
+        document.getElementById('emptyList').classList.add('d-none')
+        document.getElementById('items').classList.remove('d-none')
+
+    }
 }

@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.get('/',(req,res)=>{
     try {
-        res.render('productos.pug',{productos:Contenedor.productos})
+        res.render('productos.pug',)
     } catch (error) {
         res.json(error)
     }
