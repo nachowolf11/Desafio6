@@ -1,4 +1,3 @@
-const Contenedor = require('./Contendores/productos')
 
 const express = require('express')
 const router = express.Router()

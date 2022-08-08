@@ -1,4 +1,6 @@
-const fs = require ('fs')
+const fs = require ('fs');
+const { options } = require('../Options/db');
+const knex = require('knex')(options)
 
 class Chat{
     constructor(nombre){

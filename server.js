@@ -3,15 +3,14 @@ const router = require('./prodRouter.js')
 const { Server} = require('socket.io')
 const http = require('http')
 const Chat = require('./Contendores/chat')
-const Contenedor = require('./Contendores/productos')
+const { options } = require('./Options/db')
+const knex = require('knex')(options)
 
 const app = express()
 const server = http.createServer(app)
 const io = new Server(server)
 
 const chat = new Chat('chat.json')
-const producto = new Contenedor('productos.json')
-
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
@@ -30,8 +29,19 @@ app.get('/data',(req,res)=>{
 })
 
 app.get('/data2',(req,res)=>{
-    const data = producto.getAll()
-    res.json({data})
+    const arrProd = []
+    knex.select('*').from('productos')
+        .then(productos => {
+            for (const producto of productos) {
+                arrProd.push({
+                    title:producto.title,
+                    price:producto.price,
+                    thumbnail:producto.thumbnail
+                })
+            }
+            res.json({data:arrProd})
+        })
+        .catch(err=>{console.log(err);throw err})
 })
 
 server.listen(PORT,()=>{
@@ -46,7 +56,9 @@ io.on('connection',(socket)=>{
         io.sockets.emit('chat-out',dataOut)
     })
     socket.on('item-in', data => {
-        producto.save(data)
+        knex('productos').insert({title:data.title,price:data.price,thumbnail:data.thumbnail})
+            .then(()=>console.log('Producto guardado'))
+            .catch(err=>{console.log(err);throw err})
         const dataOut = data
         io.sockets.emit('item-out',dataOut)
     })

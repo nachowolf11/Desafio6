@@ -9,8 +9,9 @@ btnEnviar.onclick = e => {
     const fecha = `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`
     socket.emit('chat-in',{msn:msn,mail:mail,fecha:fecha})
 }
+console.log('holaaa');
 
-cargarHistorial()
+// cargarHistorial()
 cargarProductos()
 
 socket.on('chat-out', data => {
