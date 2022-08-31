@@ -8,7 +8,7 @@ router.get('/',(req,res)=>{
     } catch (error) {
         res.json(error)
     }
-})
+}) 
 
 router.get('/:id',(req,res)=>{
     try {

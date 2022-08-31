@@ -4,14 +4,14 @@ html
         link(rel="stylesheet", href="../public/style.css")
         title Lista de Productos
     body(class="container-fluid")
-        div(class="row g-0")
-            form(action="/api/productos" method="post" id="form")
-                fieldset(id="crearProducto" style="width: 25%; display: flex; flex-direction: column;")
-                    legend Producto 
-                    input(class="mb-2" type="text" id="title" placeholder="Título")
-                    input(class="mb-2" type="number" id="price" placeholder="Precio")
-                    input(class="mb-2" type="text" id="thumbnail" placeholder="URL Imagen")
-                    button(class="mb-2 btn btn-info" id="sendForm") Agregar
+        //- div(class="row g-0")
+        //-     form(action="/api/productos" method="post" id="form")
+        //-         fieldset(id="crearProducto" style="width: 25%; display: flex; flex-direction: column;")
+        //-             legend Producto 
+        //-             input(class="mb-2" type="text" id="title" placeholder="Título")
+        //-             input(class="mb-2" type="number" id="price" placeholder="Precio")
+        //-             input(class="mb-2" type="text" id="thumbnail" placeholder="URL Imagen")
+        //-             button(class="mb-2 btn btn-info" id="sendForm") Agregar
         div(class="bg-secondary mt-3 pb-3" style="--bs-bg-opacity: .2; width:95%")
             div(class="row g-0")
                 div(class="d-flex justify-content-center fw-bold text-primary fs-3 mt-5") Lista de Productos
@@ -24,7 +24,13 @@ html
         div(class="row")
             div(class="fw-bold text-primary fs-3 mt-5 mb-3") Chat de Mensajes
             div(class="mb-2")
-                input(type="mail" name="mail" id="mail" placeholder="Email")
+                form(class="row" style="width:400px" id="formChat") 
+                    input(class="col-10 mb-2" type="mail" name="email" id="email" placeholder="Email")
+                    input(class="col-10 mb-2" type="text" name="nombre" id="nombre" placeholder="Nombre")
+                    input(class="col-10 mb-2" type="text" name="apellido" id="apellido" placeholder="Apellido")
+                    input(class="col-10 mb-2" type="number" name="edad" id="edad" placeholder="Edad")
+                    input(class="col-10 mb-2" type="text" name="alias" id="alias" placeholder="Alias")
+                    input(class="col-10 mb-2" type="text" name="avatar" id="avatar" placeholder="Avatar")         
             div(id="mensajes" class="mb-2")
             div(class="input-group")
                 input(type="text" class="form-control" name="mensaje" id="mensaje" placeholder="Ingresa tu mensaje")

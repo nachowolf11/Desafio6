@@ -4,6 +4,7 @@ const { Server} = require('socket.io')
 const http = require('http')
 const Chat = require('./Contendores/chat')
 const { options } = require('./Options/db')
+const { faker } = require('@faker-js/faker')
 const knex = require('knex')(options)
 
 const app = express()
@@ -44,6 +45,25 @@ app.get('/data2',(req,res)=>{
         .catch(err=>{console.log(err);throw err})
 })
 
+app.get('/api/productos-test',(req,res)=>{
+    try {
+        const arrProd = []
+        let prod = {}
+        for (let i = 0; i < 5; i++) {
+            prod = {
+                title: faker.commerce.product(),
+                price: faker.commerce.price(),
+                thumbnail: faker.image.food(100,100,true)
+    
+            }
+            arrProd.push(prod)
+        }
+        res.json({data:arrProd})   
+    } catch (error) {
+        console.log(error);
+    }
+})
+
 server.listen(PORT,()=>{
     console.log('SERVER ON');
 })
@@ -53,7 +73,7 @@ io.on('connection',(socket)=>{
     socket.on('chat-in', data => {
         chat.save(data)
         const dataOut = data
-        io.sockets.emit('chat-out',dataOut)
+        io.sockets.emit('chat-out',dataOut.mensaje)
     })
     socket.on('item-in', data => {
         knex('productos').insert({title:data.title,price:data.price,thumbnail:data.thumbnail})

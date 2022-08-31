@@ -1,0 +1,1 @@
+{"entities":{"mensajes":{"undefined":{"0":{"id":1,"author":{"id":1,"msn":"aaa"}},"1":{"id":2,"author":{"id":1,"msn":"bbb"}},"2":{"id":3,"author":{"id":2,"msn":"cccc"}}}}},"result":["mensajes",null]}
