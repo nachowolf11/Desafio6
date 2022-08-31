@@ -1,0 +1,1 @@
+{"entities":{"autor":{"1":{"id":1,"nombre":"Nacho"},"2":{"id":2,"nombre":"Lucas"}},"mensaje":{"1":{"id":1,"mensaje":"Hola","autor":1},"2":{"id":2,"mensaje":"Todo bien?","autor":1},"3":{"id":3,"mensaje":"Bien bien","autor":2},"4":{"id":4,"mensaje":"vos?","autor":2}}},"result":[1,2,3,4]}

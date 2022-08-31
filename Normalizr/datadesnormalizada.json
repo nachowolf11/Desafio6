@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "mensaje": "Hola",
+        "autor": {
+            "id": 1,
+            "nombre": "Nacho"
+        }
+    },
+    {
+        "id": 2,
+        "mensaje": "Todo bien?",
+        "autor": {
+            "id": 1,
+            "nombre": "Nacho"
+        }
+    },
+    {
+        "id": 3,
+        "mensaje": "Bien bien",
+        "autor": {
+            "id": 2,
+            "nombre": "Lucas"
+        }
+    },
+    {
+        "id": 4,
+        "mensaje": "vos?",
+        "autor": {
+            "id": 2,
+            "nombre": "Lucas"
+        }
+    }
+]
